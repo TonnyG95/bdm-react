@@ -21,14 +21,11 @@ if os.path.isfile("env.py"):
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-
-############Probly Change
+########### Prbly Change
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
-############
-
+################### Prbly Change
 
 
 # Quick-start development settings - unsuitable for production
@@ -40,7 +37,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["bdm-shop-react.herokuapp.com", "localhost"]
+ALLOWED_HOSTS = ['bdm-shop-react.herokuapp.com', 'localhost']
 
 
 # Application definition
@@ -54,7 +51,6 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'django.contrib.staticfiles',
     'cloudinary',
-
 ]
 
 MIDDLEWARE = [
@@ -101,7 +97,6 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
-
 
 
 # Password validation
