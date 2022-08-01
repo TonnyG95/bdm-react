@@ -25,7 +25,8 @@ SECRET_KEY = 'django-insecure-d@)5+oz!9_jd5u@+(z_7c5f#h5d+6oukmi7d5bop%l4@3lw)la
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost']
+CSRF_TRUSTED_ORIGINS=['https://8000-tonnyg95-bdmreact-r8iayrrprcr.ws-eu54.gitpod.io']
 
 
 # Application definition
@@ -38,12 +39,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
+    "corsheaders",
     'rest_framework',
+    
     
     'base.apps.BaseConfig',
 ]
 
 MIDDLEWARE = [
+    
+    "corsheaders.middleware.CorsMiddleware",
+    
+
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -121,7 +128,12 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOW_ALL_ORIGINS = True
